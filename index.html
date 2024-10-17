@@ -1,1 +1,21 @@
-fdfg
+import requests
+import re
+
+# cURL을 대신하는 requests 라이브러리 사용
+url = "https://open.api.nexon.com/mabinogi/v1/npcshop/list?npc_name=%EB%8D%B8&server_name=%EB%A5%98%ED%8A%B8&channel=2"  # 요청을 보낼 URL
+response = requests.get(url)
+
+# 응답 바디에서 이미지 URL 추출
+image_urls = re.findall(r'(https?://\S+\.(?:png|jpg|jpeg|gif))', response.text)
+
+# HTML 형식으로 이미지 표시
+html_content = '<html><body>'
+for image_url in image_urls:
+    html_content += f'<img src="{image_url}" alt="Image" style="max-width: 100%;"><br>'
+html_content += '</body></html>'
+
+# 결과를 HTML 파일로 저장
+with open('images.html', 'w') as f:
+    f.write(html_content)
+
+print("이미지 HTML 파일이 생성되었습니다: images.html")
