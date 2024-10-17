@@ -1,5 +1,6 @@
 const GITHUB_API_URL = 'https://api.github.com/repos/{owner}/{repo}/readme';
-const API_KEY = 'YOUR_API_KEY'; // GitHub API Key 입력
+const API_KEY = '
+live_ac503cb3e9ac15fd5c33b15391cf7aefc56e70f6193ac938586facfac3de4969efe8d04e6d233bd35cf2fabdeb93fb0d'; // GitHub API Key 입력
 
 fetch(GITHUB_API_URL, {
     method: 'GET',
