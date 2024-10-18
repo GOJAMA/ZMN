@@ -1,4 +1,4 @@
-onst locations = [
+const locations = [
   { location: "티르코네일", npc: "상인 네루" },
    { location: "던바튼", npc: "상인 누누" },
    { location: "카브", npc: "상인 아루" },
